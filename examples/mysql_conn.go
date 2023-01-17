@@ -2,8 +2,6 @@ package main
 
 import (
 	"fmt"
-	"log"
-	"time"
 
 	"github.com/gogo-lib/netconn"
 )
@@ -15,9 +13,6 @@ func main() {
 		"192.168.49.2", "30015", "admin", "admin", "netconn-mysql",
 	)
 
-	for {
-		time.Sleep(time.Second * 1)
-		conn := netconn.GetPostgreSQLConn(pgDSN)
-		log.Println("conn: ", conn.Ping())
-	}
+	conn := netconn.GetPostgreSQLConn(pgDSN)
+	fmt.Println(conn.Ping())
 }

@@ -14,7 +14,7 @@ var (
 	rwmPostgreSQLConn sync.RWMutex
 )
 
-// GetPostgreSQLConn return connection to mysql
+// GetPostgreSQLConn return an active connection to mysql
 func GetPostgreSQLConn(dsn string) *sql.DB {
 	// check conn is already connected
 	rwmPostgreSQLConn.RLock()
